@@ -8,8 +8,8 @@ import auth from '../../Auth'
 import LoginInput from './LoginInput';
 import ValidateInputForm from './LoginFormValidation';
 
-//is route component for this route
-//ValidateInputForm not setting state properly, use alert for now
+//Top level login component. Renders dashboard on success
+
 //using setTimeout for alert due to interferance of microtask
 class LoginForm extends React.Component {
 	constructor(props) {
@@ -19,16 +19,12 @@ class LoginForm extends React.Component {
 			password: '',
 			errors: {}
 		}
-
 		this.onChange = this.onChange.bind(this)
 		this.onSubmit = this.onSubmit.bind(this)
-
 	}
-
 	onChange(e) {
 		this.setState({[e.target.name] : e.target.value })
 	}
-
 	isValid() {
 		var that = this
 		const {errors, isValid } = ValidateInputForm(this.state)
@@ -40,8 +36,7 @@ class LoginForm extends React.Component {
 			alert(errorArray)
 		}
 		return isValid
-	}
-	
+	}	
 	onSubmit(e) {
 		e.preventDefault();
 		if(this.isValid()) {
@@ -58,14 +53,12 @@ class LoginForm extends React.Component {
 		})
 		} 
 	}
-
 	componentDidMount(){
 		if(auth.loggedIn()){
 			let sheepToken = jwtDecode(localStorage.sheepToken);
 			browserHistory.push('dashboard/' + sheepToken.userName);
 		}
 	}
-
 	render() {
 		return (
 			<div className="login-input-outer">

@@ -1,6 +1,8 @@
 import React from 'react';
 import Clipboard from'react-clipboard.js';
 
+//Script tag and API information on the profile tab of dashboard
+
 const PublicAPI = (props) => {
 	return (
     <div>

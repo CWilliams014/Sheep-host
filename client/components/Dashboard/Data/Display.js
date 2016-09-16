@@ -1,6 +1,8 @@
 import React from 'react';
 import DataItem from './DataItem'
 
+// Container which holds each piece of data (<DataItem />) from database as list item
+
 const Display = (props) => {
 	var dataArray = []
 	props.display.forEach((el, i) => {

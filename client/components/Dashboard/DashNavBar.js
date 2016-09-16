@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Blue navigation bar to toggle views. props.toggle changes the state of infoDisplayed in Dashboard component
 
 const DashNavBar = (props) => {
 	return (
@@ -14,7 +15,7 @@ const DashNavBar = (props) => {
 		    <button name="profile" type="button" onClick={props.toggle} className="btn btn-default">Profile</button>
 		  </div>
 		    <div className="btn-group" role="group">
-		    <button name="docs" type="button" activeClassName="tab-active" onClick={props.toggle} className="btn btn-default">Docs</button>
+		    <button name="docs" type="button" onClick={props.toggle} className="btn btn-default">Docs</button>
 		  </div>
 		</div>
 	)

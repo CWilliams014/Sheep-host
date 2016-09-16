@@ -1,6 +1,8 @@
 import React from 'react';
 import SecretClick from './SecretClick'
 
+//Receives props from Dashboard. Iterates through user information and displays databases, collections, and user information(i.e Dev id)
+
 const UserProfile = (props) => {
 	let userDBProfileInfo = []
 	let userInfo = []

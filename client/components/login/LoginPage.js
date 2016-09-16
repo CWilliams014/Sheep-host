@@ -4,7 +4,7 @@ import { userLogin } from '../../actions/loginAction';
 import NavigationBar from '../NavigationBar';
 import LoginForm from './LoginForm';
 
-//is route component for this route
+// userLogin action imported from Redux store. Renders Login form
 class LoginPage extends React.Component {
 	render() {
 	const { userLogin } = this.props

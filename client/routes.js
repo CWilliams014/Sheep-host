@@ -7,8 +7,8 @@ import SignupPage from './components/signup/SignupPage';
 import WaitPage from './components/WaitPage';
 import Dashboard from './components/Dashboard/Dashboard';
 import LogoutComponent from './components/logout/Logout';
-// import NotFound from './components/PageNotFound';
 
+// Route hierarchy for app
 export default (
 	<Route path="/" component={App}>
 		<IndexRoute component={Greetings} />

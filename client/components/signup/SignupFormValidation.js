@@ -1,7 +1,7 @@
 import React from 'react';
 import Validator from 'validator';
 import isEmpty from 'lodash/isEmpty';
-
+//Validates signup input for null or invalid fields
 const ValidateSignupInputForm = (data) => {
 	let errors = {};
 

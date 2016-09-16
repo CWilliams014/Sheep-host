@@ -1,6 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 
+// Holds input functionality for API sandbox. Parent is Dashboard component
 
 const ApiSandbox = (props) => {
 	return(

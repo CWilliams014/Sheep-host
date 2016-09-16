@@ -1,7 +1,7 @@
 import React from 'react';
 
-//this refactoring needs to be tested before merged!!!!!!!!!
-//!!!!!!
+//Displays GET, POST, PUT, DELETE	true or false for API permissions
+
 const Permissions = (props) => {
 		let radioArray = [];
 		for(let permission in props.permissions){

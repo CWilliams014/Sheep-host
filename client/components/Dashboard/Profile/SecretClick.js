@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import jwtDecode from 'jwt-decode';
 
+// Toggles view of developers secret api key onClick
 
 const SecretClick = (props) => {
   let token = jwtDecode(localStorage.sheepToken);

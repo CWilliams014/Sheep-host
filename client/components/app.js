@@ -1,6 +1,7 @@
 import React from 'react';
 import NavigationBar from './NavigationBar'
 
+// Highest level component below router component
 class App extends React.Component {
 	render() {
 		return (

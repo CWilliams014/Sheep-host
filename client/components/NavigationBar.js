@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router';
 import auth from '../Auth';
 import logo from '../../Public/sheepHostSheep.png';
-
+// Uppermost navigation bar fixed to top of the window
 export default () => {
   let loginButton;
   let signupButton

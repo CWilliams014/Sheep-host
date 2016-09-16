@@ -2,6 +2,8 @@ import React from 'react';
 import Validator from 'validator';
 import isEmpty from 'lodash/isEmpty';
 
+// Validates login information checking for empty responses
+
 const ValidateInputForm = (data) => {
 	let errors = {};
 

@@ -6,11 +6,13 @@ import thunk from 'redux-thunk';
 import { createStore, applyMiddleware } from 'redux';
 import routes from './routes';
 import '../Public/stylesheet.css'
-//could use inital state as param - ssr - none here yet
+
+// Redux store in place 
 const store = createStore(
 	(state = {}) => state,
 	applyMiddleware(thunk)
 );
+
 
 render(
 	<Provider store={store}>

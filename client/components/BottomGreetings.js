@@ -1,6 +1,7 @@
 import React from 'react'
 import GitHubImage from '../../Public/GitHub-Mark.png'
 
+//bottom half of landing page. No props, just markup
 const BottomGreetings = () => {
 	return(
 		<div className="text-center">

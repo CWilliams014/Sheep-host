@@ -1,5 +1,5 @@
 .container{
-	background: url('./macbook-pro-keyboard.png.jpg');
+	background: url('./macbook-pro-keyboard-compress.jpg');
 	height: 100%;
 }
 html {
@@ -14,12 +14,12 @@ body {
 }
 
 .h {
-	background: url('./macbook-pro-keyboard.png.jpg');
+	background: url('./macbook-pro-keyboard-compress.jpg');
 }
 
 .top {
 	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#1e5799+0,207cca+16,207cca+16,2989d8+50,3c89c9+72,7db9e8+100 */
-background: url('./macbook-pro-keyboard.png.jpg');
+background: url('./macbook-pro-keyboard-compress.jpg');
 background-size: 120% 100% ;
 }
 
@@ -51,7 +51,7 @@ font-family: 'Raleway', sans-serif;
 	margin-top: 20px;
 }
 
-
+/*buttons / tabs*/
 
 .landing-button {
 	display: block;
@@ -88,6 +88,91 @@ font-family: 'Raleway', sans-serif;
   background-image: -o-linear-gradient(top, #3cb0fd, #3498db);
   background-image: linear-gradient(to bottom, #3cb0fd, #3498db);
   text-decoration: none;
+}
+.tab-active {
+	background-color: #fff;
+}
+
+.tab{
+	padding-left: 10px;
+	padding-right: 10px;
+	border: 1px solid #00327A;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+
+.tab #active{
+	border-bottom: none;
+}
+.btn-group {
+	margin-bottom: 10px;
+}
+
+.btn-default {
+	font-size:30px;
+	font-weight: 1;
+	color: #F2F2F2;
+  background: #134e75;
+  background-image: -webkit-linear-gradient(top, #134e75, #2980b9);
+  background-image: -moz-linear-gradient(top, #134e75, #2980b9);
+  background-image: -ms-linear-gradient(top, #134e75, #2980b9);
+  background-image: -o-linear-gradient(top, #134e75, #2980b9);
+  background-image: linear-gradient(to bottom, #134e75, #2980b9);
+}
+.btn-group-justified .btn-group .btn:hover {
+	font-weight: 100;
+	background: #fff;
+	transition: all 0.3s ease-in-out;
+
+}
+
+
+.tabs {
+	font-weight: 40;
+	margin-top: 20px;
+	margin-left: 10px;
+	color: #134e75;
+	background-color: white;
+	font-size: 17px;
+	font-style: Sans-Serif;
+}
+
+.tabs .btn .btn-primary .info {
+	color: black;
+}
+
+.add-db-button {
+	width: 300px;
+	font-weight: 100;
+	margin-left: 25%;
+}
+
+.login-button {
+	margin-left: 40%;
+	font-weight: 100;
+}
+.submit-button {
+	margin-left: 40%;
+	font-weight: 100;
+}
+
+.tab-button {
+  color: #ffffff;
+  background-color: #611BBD;
+}
+.api-button {
+	font-size: 22px;
+	height: 46px;
+	width: 150px;
+	margin-top: 15px;
+	margin-left: 37%;
+	font-weight: 100;
+	padding-bottom: 20px;
+}
+
+/* input */
+.Collection-Input {
+	float: left;
 }
 
 .welcome-to-sheep {
@@ -129,17 +214,6 @@ font-family: 'Raleway', sans-serif;
   }
 }
 
-/*image */
-.build-flow {
-	height: 300px;
-	width: 400px;
-}
-/*image */
-.prototype-image {
-	width: 35%;
-	height: 400%;
-	margin-right: 3%;
-}
 
 .navbar { 
 	margin-bottom: 0;
@@ -245,14 +319,6 @@ font-family: 'Raleway', sans-serif;
 	color: gray;
 }
 
-.Collection-Input {
-	float: left;
-}
-
-.hide-true {
-	display: none;
-}
-
 .text-center .banner {
 	background-color: red;
 }
@@ -319,22 +385,6 @@ font-family: 'Raleway', sans-serif;
 	opacity: 1.0;
 }
 
-.tab-active {
-	background-color: #fff;
-}
-
-.tab{
-	padding-left: 10px;
-	padding-right: 10px;
-	border: 1px solid #00327A;
-	border-top-left-radius: 5px;
-	border-top-right-radius: 5px;
-}
-
-.tab #active{
-	border-bottom: none;
-}
-
 .user-profile {
 	font-size: 24px;
 }
@@ -369,75 +419,6 @@ input[type=radio] {
 	display: inline;
 	padding-left: 50px;
 	padding-right: 20px;
-}
-
-.btn-group {
-	margin-bottom: 10px;
-}
-
-.btn-default {
-	font-size:30px;
-	font-weight: 1;
-	color: #F2F2F2;
-  background: #134e75;
-  background-image: -webkit-linear-gradient(top, #134e75, #2980b9);
-  background-image: -moz-linear-gradient(top, #134e75, #2980b9);
-  background-image: -ms-linear-gradient(top, #134e75, #2980b9);
-  background-image: -o-linear-gradient(top, #134e75, #2980b9);
-  background-image: linear-gradient(to bottom, #134e75, #2980b9);
-}
-.btn-group-justified .btn-group .btn {
-	font-weight: 100;
-	transition: all 0.3s ease-in-out;
-
-}
-
-
-.btn-group-justified .btn-group .btn-default .active {
-	background:#fff;
-}
-
-.tabs {
-	font-weight: 40;
-	margin-top: 20px;
-	margin-left: 10px;
-	color: #134e75;
-	background-color: white;
-	font-size: 17px;
-	font-style: Sans-Serif;
-}
-
-.tabs .btn .btn-primary .info {
-	color: black;
-}
-
-.add-db-button {
-	width: 300px;
-	font-weight: 100;
-	margin-left: 25%;
-}
-
-.login-button {
-	margin-left: 40%;
-	font-weight: 100;
-}
-.submit-button {
-	margin-left: 40%;
-	font-weight: 100;
-}
-
-.tab-button {
-  color: #ffffff;
-  background-color: #611BBD;
-}
-.api-button {
-	font-size: 22px;
-	height: 46px;
-	width: 150px;
-	margin-top: 15px;
-	margin-left: 37%;
-	font-weight: 100;
-	padding-bottom: 20px;
 }
 
 footer{

@@ -7,7 +7,7 @@ import NavigationBar from './NavigationBar';
 import BottomGreetings from './BottomGreetings.js'
 
 
-//some punctuation removed for code readbility during testing styles
+//Landing page component
 class Greetings extends React.Component {
 	constructor(props) {
 		super(props);

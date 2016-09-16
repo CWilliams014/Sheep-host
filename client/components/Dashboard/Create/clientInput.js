@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Input logic for creating database/collection. Parent is Dashboard component
 
 const ClientInput = (props) => {
 		return (

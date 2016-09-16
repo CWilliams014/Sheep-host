@@ -1,5 +1,7 @@
 import React from 'react';
 
+// each piece of data rendered as list item with key:value.
+
 const DataItem = (props) => {
 	var dataResults = [];
 	for (var value in props.info) {

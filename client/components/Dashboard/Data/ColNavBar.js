@@ -1,5 +1,6 @@
 import React from 'react';
 
+//Dynamically renders tabs of users collection names
 
 const ColNavBar = (props) => {
 	return (

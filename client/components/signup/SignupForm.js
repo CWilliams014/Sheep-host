@@ -8,7 +8,7 @@ import ValidateSignupInputForm from './SignupFormValidation';
 
 
 
-//is root component for this route
+//Top level signup component. Renders dashboard page on success
 class SignupForm extends React.Component {
 	constructor(props) {
 		super(props);
@@ -17,16 +17,12 @@ class SignupForm extends React.Component {
 			password:'',
       email:''
 		}
-
 		this.onChange = this.onChange.bind(this)
 		this.onSubmit = this.onSubmit.bind(this)
-
 	}
 	onChange(e) {
 		this.setState({[e.target.name] : e.target.value })
 	}
-
-
 	isValid() {
 		const {errors, isValid } = ValidateSignupInputForm(this.state)
 		let errorArray = []
@@ -38,7 +34,6 @@ class SignupForm extends React.Component {
 		}
 		return isValid
 	}
-
 	onSubmit(e) {
 		e.preventDefault();
 		if(this.isValid()){
@@ -55,7 +50,6 @@ class SignupForm extends React.Component {
 			})
 		}
 	}
-
 	render() {
 		return (
 			<div className="login-input-outer">
@@ -65,7 +59,7 @@ class SignupForm extends React.Component {
                email={this.state.email}
 							 password={this.state.password} />
 			</div>
-			)
+		)
 	}
 }
 

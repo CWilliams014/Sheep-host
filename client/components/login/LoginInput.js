@@ -1,5 +1,6 @@
 import React from 'react';		
-//Didn't copy signupInput component because we may add additional input fields to that
+
+// All input is passed to onSubmit function. Parent is LoginForm
 const LoginInput = (props) =>{
 	return (
 		<div>

@@ -1,5 +1,6 @@
 import React from 'react';
 
+// Dynamically renders tabs holding users database names
 
 const DBNavBar = (props) => {
 

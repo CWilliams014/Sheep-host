@@ -1,6 +1,6 @@
 import React from 'react';
 import NavigationBar from './NavigationBar';
-
+// waiting page after signup email is sent.
 const WaitPage = () =>{
   return(
     <div className="welcome-to-sheep">

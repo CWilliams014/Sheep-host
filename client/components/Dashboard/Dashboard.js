@@ -18,6 +18,9 @@ import PublicAPI from './Profile/PublicAPI';
 import Permissions from './Profile/PermissionsForm';
 import Docs from './Docs/Docs';
 
+// Highest level container component. Responsible for dashboard logic and data retrieval. 
+// Methods can be imported as Redux actions upon refactoring
+
 const Dashboard = React.createClass({
 	getInitialState () {
 		return {
