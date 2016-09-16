@@ -17,6 +17,8 @@ import UserProfile from './Profile/UserProfileInfo.js';
 import PublicAPI from './Profile/PublicAPI';
 import Permissions from './Profile/PermissionsForm';
 import Docs from './Docs/Docs';
+import env from '../../../.env';
+let path = env.NODE_ENV === 'development' ? 'http://localhost:3000/' : 'https://sheep.host/';
 
 // Highest level container component. Responsible for dashboard logic and data retrieval. 
 // Methods can be imported as Redux actions upon refactoring
@@ -50,8 +52,9 @@ const Dashboard = React.createClass({
 	},
 
 	componentWillMount(){
+		console.log('componentwillmount');
 		document.body.style.background = "white";
-		localStorage.sheepToken = cookie.load('token');
+		if(!localStorage.sheepToken ) localStorage.sheepToken = cookie.load('token');
 		let token = jwtDecode(localStorage.sheepToken);
 		let authKey = token.authKey;
 		let email = token.email;
@@ -68,7 +71,13 @@ const Dashboard = React.createClass({
   getData() {
 		let that = this;
 		let _id = jwtDecode(localStorage.sheepToken).devID;
-		axios.get('/getDBs/'+_id).then(function(response) {
+		let link = '/getDBs/'+_id
+		axios({
+			method: 'get',
+			baseURL: path,
+			url: link,
+			headers: {Authorization: 'Bearer '+ localStorage.sheepToken}
+		}).then(function(response) {
 			if(response.data.length> 0){
 				let info = {};
 				let data = response.data;
@@ -111,10 +120,10 @@ const Dashboard = React.createClass({
 		const _id = that.state._id;
 		const _dbName = that.state.DBkeys[that.state.activeDBLink];
 		const _collectionName = that.state.Colkeys[this.state.activeCollectionLink];
-		const link = _id + '/' + _dbName + '/' + _collectionName;
+		const link = 'api/' + _id + '/' + _dbName + '/' + _collectionName;
 		axios({
 			method: 'get',
-			baseURL: 'http://localhost:3000/api/',
+			baseURL: path,
 			url: link,
 			headers: {Authorization: 'Bearer '+ localStorage.sheepToken}
 		}).then(function(response){
@@ -200,10 +209,10 @@ const Dashboard = React.createClass({
 		let post = JSON.parse(that.state.postInput);
 		const _dbName = that.state.DBkeys[that.state.activeDBLink];
 		const _collectionName = that.state.Colkeys[this.state.activeCollectionLink];
-		const link = _id +'/'+ _dbName +'/'+ _collectionName
+		const link = 'api/' + _id +'/'+ _dbName +'/'+ _collectionName
 		axios({
 			method: 'post',
-			baseURL: 'http://localhost:3000/api/',
+			baseURL: path,
 			url: link,
 			headers: {Authorization: 'Bearer '+ localStorage.sheepToken},
 			data: post
@@ -224,10 +233,10 @@ const Dashboard = React.createClass({
 		const _putValue = _putQuery[_putKey];
 		const _dbName = that.state.DBkeys[that.state.activeDBLink];
 		const _collectionName = that.state.Colkeys[this.state.activeCollectionLink];
-		const link = _id +'/'+ _dbName +'/'+ _collectionName  + '/?' + _putKey + '=' + _putValue;
+		const link = 'api/' + _id +'/'+ _dbName +'/'+ _collectionName  + '/?' + _putKey + '=' + _putValue;
 		axios({
 			method: 'put',
-			baseURL: 'http://localhost:3000/api/',
+			baseURL: path,
 			url: link,
 			headers: {Authorization: 'Bearer '+ localStorage.sheepToken},
 			data: put
@@ -246,10 +255,10 @@ const Dashboard = React.createClass({
 		const _deleteValue = _deleteQuery[_deleteKey];
 		const _dbName = that.state.DBkeys[that.state.activeDBLink];
 		const _collectionName = that.state.Colkeys[this.state.activeCollectionLink];
-		const link = _id +'/'+ _dbName +'/'+ _collectionName + '/?' + _deleteKey + '=' + _deleteValue;
+		const link = 'api/' + _id +'/'+ _dbName +'/'+ _collectionName + '/?' + _deleteKey + '=' + _deleteValue;
 		axios({
 			method: 'delete',
-			baseURL: 'http://localhost:3000/api/',
+			baseURL: path,
 			url: link,
 			headers: {Authorization: 'Bearer '+ localStorage.sheepToken}
 		}).then(function(response){
@@ -265,13 +274,9 @@ const Dashboard = React.createClass({
   onPermissionsClick(e) {
   	let that = this;
   	let permissions = that.state.permissions;
-  	console.log('perm click name', e.target.name);
-  	console.log('state permissions', that.state.permissions);
   	let permission = e.target.name;
   	permissions[permission] = (e.target.value === 'true') ? false: true;
-  	console.log('permissions click', permissions)
   	that.setState({permissions});
-  	console.log('permissions click', that.state.permissions)
   },
 
   savePermissions(e){
@@ -287,12 +292,11 @@ const Dashboard = React.createClass({
   	data['permissions'] = permissions;
 		axios({
 			method: 'post',
-      baseURL: 'http://localhost:3000/',
+      baseURL: path,
 			url: 'permission',
 			headers: {Authorization: 'Bearer '+ localStorage.sheepToken},
 			data: data
 		}).then(function(response){
-			console.log('setstate');
 			that.setState({permissions})
 		})
   },
@@ -311,7 +315,7 @@ const Dashboard = React.createClass({
 			profileInfo[name] = Object.keys(this.state.database[name])
 		}
 		if(!this.state.activeCollectionData){
-			let collectionData = "This collection is empty."
+			let collectionData = []
 		}
 		else{let collectionData = this.state.activeCollectionData;}
 		return (
