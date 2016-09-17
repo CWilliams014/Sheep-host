@@ -40,6 +40,14 @@ if (env.NODE_ENV === 'development') {
           inclue: [path.join(__dirname, 'Public')],
           loaders: ['style', 'css']
         },
+        {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          exclude: /(node_modules)/,
+          query: {
+          presets: ['es2015', 'react', 'stage-0']
+          }
+        }
       ]
     },
     resolve: {
