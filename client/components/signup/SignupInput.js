@@ -12,7 +12,7 @@ const SignupInput =(props) => {
 							onChange={props.onChange}
 							type="text"
 							name="userName"
-							className="form-control"
+							className="form-control userName"
 						/>
 					</div>
 
@@ -22,7 +22,7 @@ const SignupInput =(props) => {
 							onChange={props.onChange}
 							type="text"
 							name="email"
-							className="form-control"
+							className="form-control email"
 						/>
 					</div>
 
@@ -32,7 +32,7 @@ const SignupInput =(props) => {
 							onChange={props.onChange}
 							type="password"
 							name="password"
-							className="form-control"
+							className="form-control password"
 						/>
 					</div>
 

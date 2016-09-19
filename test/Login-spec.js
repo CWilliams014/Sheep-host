@@ -6,9 +6,10 @@ import LoginForm from '../client/components/login/LoginForm'
 import LoginInput from '../client/components/login/LoginInput'
 import LoginPage from '../client/components/login/LoginPage'
 
-describe('LoginPage />', () => {
-	const wrapper = shallow(<LoginPage />)
-	it('should render LoginForm component', () => {
-		expect(wrapper.contains(<LoginForm />)).to.equal.true
+describe('LoginForm />', () => {
+	xit('should render LoginInput component', () => {
+		const wrapper = mount(<LoginForm />)
+		expect(wrapper.contains(<LoginInput />)).to.equal.true
 	})
 })
+
